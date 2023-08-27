@@ -116,7 +116,7 @@ transition: color 0.3s ease;
     display: flex;
     background: url("img/hero\ image.jpg") no-repeat center;
     height: 100vh;
-    color: rgb(225, 231, 236);
+    color: rgb(255, 255, 255);
     min-height: 500px;
     font-family: 'poppins';
 }

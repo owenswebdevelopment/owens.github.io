@@ -65,30 +65,33 @@ $('.carousel').owlCarousel({
     }
 })
 
+})
+
 //Initialize EmailJS with your user ID
 emailjs.init("BiWJoMLf_VShR9DS5");
 
 // Define the email parameters
-const params = {
-    to_email: "recipient@example.com",
-    from_name: document.querySelector("#sendername").value,
-    from_email: document.querySelector("#email_id").value,
-    subject: document.querySelector("#subject").value,
-    message: document.querySelector("#message").value,
-};
+function sendMail() {
+    var senderNameInput = document.getElementById("sendername");
+    var emailInput = document.getElementById("email_id");
+    var messageInput = document.getElementById("message");
 
-// Send the email
-emailjs.send("service_20n6aa8", "template_yiab0xn", params)
-    .then(function(response) {
-        console.log("Email sent:", response);
-    }, function(error) {
-        console.error("Email error:", error);
+    var params = {
+        from_name: senderNameInput.value,
+        email_id: emailInput.value,
+        message: messageInput.value,
+        to_email: "melfordmalichai@gmail.com" // Replace with the recipient's email address
+    };
+
+    emailjs.send("service_20n6aa8", "template_yiab0xn", params).then(function (res) {
+        alert("Success! " + res.status);
+
+        // Clear the input fields
+        senderNameInput.value = "";
+        emailInput.value = "";
+        messageInput.value = "";
     });
-
-})
-
-
-
+}
 
 
 
