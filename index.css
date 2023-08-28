@@ -551,7 +551,7 @@ margin-right: 10px;
 }
 
 .button button{
-    color: #000000 !important;
+    color: #000000;
 }
 .contact .right form .button button:hover{
     background: rgb(12, 12, 12);
