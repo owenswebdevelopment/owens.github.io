@@ -86,7 +86,7 @@ function sendMail() {
     };
 
     emailjs.send("service_20n6aa8", "template_yiab0xn", params).then(function (res) {
-        alert("Success! " + res.status);
+        alert("Message Sent! " + res.status);
 
         // Clear the input fields
         senderNameInput.value = "";
