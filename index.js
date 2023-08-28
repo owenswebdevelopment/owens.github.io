@@ -75,11 +75,13 @@ function sendMail() {
     var senderNameInput = document.getElementById("sendername");
     var emailInput = document.getElementById("email_id");
     var messageInput = document.getElementById("message");
+    var subjectInput = document.getElementById("subject");
 
     var params = {
         from_name: senderNameInput.value,
         email_id: emailInput.value,
         message: messageInput.value,
+        subject: subjectInput.value,
         to_email: "melfordmalichai@gmail.com" // Replace with the recipient's email address
     };
 
@@ -90,6 +92,7 @@ function sendMail() {
         senderNameInput.value = "";
         emailInput.value = "";
         messageInput.value = "";
+        subjectInput.value = "";
     });
 }
 
