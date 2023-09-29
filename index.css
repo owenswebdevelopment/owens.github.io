@@ -596,7 +596,9 @@ margin-right: 10px;
     transform: scaleX(1);
   }
 
-
+#shadow-host-companion{
+    display: none;
+}
 
 
 
