@@ -13,7 +13,7 @@ $(window).scroll(function(){
     }
 });
 
-//slide-up script 
+//slide-up script
 $('.scroll-up-btn').click(function(){
     $('html').animate({scrollTop: 0});
 });
@@ -43,7 +43,7 @@ var typed = new Typed(".typing-2", {
 });
 
 
-//owl carousel script 
+//owl carousel script
 $('.carousel').owlCarousel({
     margin: 20,
     loop: true,
@@ -52,7 +52,7 @@ $('.carousel').owlCarousel({
     responsive: {
         0:{
             items: 1,
-            nav: false 
+            nav: false
         },
         600:{
             items:2,
@@ -77,34 +77,55 @@ function sendMail() {
     var messageInput = document.getElementById("message");
     var subjectInput = document.getElementById("subject");
 
+    if (![senderNameInput, emailInput, messageInput, subjectInput].every(input => input.value.trim())){
+    Swal.fire({
+      icon:  "error",
+      title: "Fill in all inputs"
+    });
+      return;
+    }
     var params = {
-        from_name: senderNameInput.value,
-        email_id: emailInput.value,
-        message: messageInput.value,
-        subject: subjectInput.value,
+        from_name: senderNameInput.value.trim(),
+        email_id: emailInput.value.trim(),
+        message: messageInput.value.trim(),
+        subject: subjectInput.value.trim(),
         to_email: "melfordmalichai@gmail.com" // Replace with the recipient's email address
     };
 
-    emailjs.send("service_20n6aa8", "template_yiab0xn", params).then(function (res) {
-        alert("Message Sent! " + res.status);
+    emailjs.send("service_er8ejie", "template_yiab0xn", params).then(function (res) {
+      Swal.fire({
+      title: "message sent!",
+      text: "I will get back to you as soon as possible!",
+      icon: "success"
+    });
+
+
 
         // Clear the input fields
         senderNameInput.value = "";
         emailInput.value = "";
         messageInput.value = "";
         subjectInput.value = "";
-    });
+    })
+    .catch(function (err){
+      console.error("Error sending email:", err)
+      Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Something went wrong!"
+      });
+    })
 }
 
 
-
+document.getElementById("year").innerText = new Date().getFullYear();
 //// emailjs.init("BiWJoMLf_VShR9DS5");
 // function sendMail() {
 //     var params = {
 //         from_name : document.getElementById("senderName").value,
 //         email_id : document.getElementById("email_id").value,
 //         message : document.getElementById("message").value,
-        
+
 //     }
 //     emailjs.send("service_20n6aa8", "template_yiab0xn", params).then(function (res) {
 //         alert("success! " + res.status);

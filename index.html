@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 </head>
 <body>
@@ -18,8 +19,8 @@
         <i class="fas fa-angle-up"></i>
     </div>
 <nav class="navbar">
-    <div class="max-width">
-        <div class="logo"><a href="#">Owen's Portfo<span>lio</span></div>
+  <div class="max-width-nav">
+  <div class="logo"><a href="#">Owen's Portfo<span>lio</span></div>
 <ul class="menu">
 <li><a href="#home" class="menu-btn">Home</a></li>
 <li><a href="#about" class="menu-btn">About</a></li>
@@ -34,16 +35,23 @@
 </nav>
 
 <!--home section start-->
+
 <section class="home" id="home">
-<div class="max-width">
-    <div class="home-content">
+<div class="banner" style="height: 700px; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,5.9)), url('img/Owen\ Update.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="max-width">
+      <div class="home-content">
         <div class="text-1">Hello, my name is</div>
         <div class="text-2"> Owen Newsome</div>
         <div class="text-3">I am a <span class="typing">Web Developer</span></div>
         <a href="#contact">Hire Me</a>
+      </div>
     </div>
 </div>
 </section>
+
+
+
+
 <!--about section start-->
 <section class="about" id="about">
     <div class="max-width">
@@ -55,11 +63,23 @@
             <div class="column right">
                 <div class="text">I am Owen and I am a <span class="typing-2">Web Developer</span></div>
                 <p>A highly skilled and results-driven web developer with 4 years of experience in designing and developing exceptional websites. Proficient in front-end and back-end technologies, I combine creativity with technical expertise to deliver engaging and user-friendly online experiences.</p>
-                <a href="img/Owen D Resume.pdf" target="_blank">Download CV</a>
+                <a class="resume" href="img/Owen D Resume.pdf" target="_blank">Download CV</a>
+                <div class="container">
+                <div class="social">
+                  <a href="https://www.linkedin.com/in/owen-newsome-907b30137" target="_blank" class="text-decoration-none">
+                  <span><i class="fa-brands fa-linkedin fa-2xl gradient-icon"></i></span>
+                  </a>
+                </div>
+                <div class="social">
+                  <a href="https://github.com/owenswebdevelopment" target="_blank">
+                  <span><i class="fa-brands fa-github fa-2xl gradient-icon"></i></i></span>
+                  </a>
+                </div>
+                </div>
             </div>
         </div>
     </div>
-    </section>
+</section>
 
     <!--services section start-->
 <section class="services" id="services">
@@ -91,10 +111,10 @@
             </div>
         </div>
     </div>
-    </section>
+</section>
     <!--skills section-->
 
-    <section class="skills" id="skills">
+<section class="skills" id="skills">
         <div class="max-width">
             <h2 class="title">My Skills</h2>
             <div class="skills-content">
@@ -106,23 +126,37 @@
                 <div class="column right">
                     <div class="bars">
                         <div class="info">
-                            <span>HTML</span>
-                            <span>90%</span>
+                            <span>Ruby on Rails</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line html"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>JavaScript</span>
+                            <span>70%</span>
                         </div>
                         <div class="line html"></div>
                     </div>
 
                     <div class="bars">
                         <div class="info">
-                            <span>CSS3</span>
-                            <span>80%</span>
+                            <span>SQLpostgress</span>
+                            <span>60%</span>
                         </div>
                         <div class="line css"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
-                            <span>JavaScript</span>
-                            <span>60%</span>
+                            <span>Git</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line javas"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>GitHub</span>
+                            <span>80%</span>
                         </div>
                         <div class="line javas"></div>
                     </div>
@@ -249,7 +283,7 @@
 
     <!--footer section will be here-->
 <footer>
-    <span class="gradient-text">Created By <a href="#" class="gradient-text">Owen Newsome using HTML, CSS & JavaScript</a> | <span class="far fa-copyright"></span> 2023 All Rights Reserved</span>
+    <span class="gradient-text">Created By <a href="#" class="gradient-text">using HTML, CSS & JavaScript</a> | © <span id="year"></span> All Rights Reserved</span>
 </footer>
 <script src="index.js"></script>
 </body>

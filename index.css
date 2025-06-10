@@ -13,12 +13,21 @@ html{
     padding: 0 80px;
     margin: auto;
 }
+
+.max-width-nav {
+   max-width: 1300px;
+   padding: 0 0 0 30px;
+}
+
+.max-width-nav .menu {
+   margin: 0;
+}
 /*navbar styling*/
 .navbar{
     position: fixed;
     width: 100%;
     /*background: rgb(180, 58, 58);*/
-    padding: 30px 0px;
+    padding: 25px 0px;
     font-family: 'poppins';
     color: aliceblue;
     transition: all 0.3s ease;
@@ -29,18 +38,18 @@ html{
     background: linear-gradient(45deg, rgb(8, 8, 7), #5f564f);
     box-shadow: 0px 3px 6px rgba(103, 101, 105, 0.5);
 }
-.navbar .max-width{
+.navbar .max-width-nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
 }
+
 .navbar .menu li{
     list-style: none;
     display: inline-block;
 }
 .navbar .logo a {
-    color: rgb(255, 255, 255);
+    color: rgb(13, 13, 13);
     font-family: 'roboto';
     font-size: 35px;
     font-weight: 600;
@@ -48,6 +57,17 @@ html{
 .navbar .logo a span{
     color: rgb(190,160,96);
     transition: all 0.3s ease;
+}
+.navbar .logo a{
+    display: flex;
+    color: rgb(0, 0, 0);
+    align-items: flex-start;
+}
+.navbar.sticky .logo a{
+    color: rgb(190,160,96);
+}
+.navbar.sticky .logo {
+    color: rgb(190,160,96);
 }
 
 .navbar.sticky .logo a span{
@@ -64,12 +84,12 @@ transition: color 0.3s ease;
 
 .navbar .menu li a:hover{
     background: linear-gradient(45deg, #ff00cc, #3333ff);
-  border-radius: 6px;
-  padding: 0 3px;
-}
-.navbar.sticky .menu li a:hover{
+    border-radius: 6px;
+    padding: 0 3px;
+  }
+  .navbar.sticky .menu li a:hover{
     color: rgb(255, 255, 255);
-}
+  }
 
 /*Menu button styling*/
 
@@ -111,14 +131,36 @@ transition: color 0.3s ease;
 
 
 /*home section style*/
+.banner {
+  /* background-image: url('img/owen\ .jpg');  */
+  background-size: cover;
+ background-position: bottom center;
+   background-repeat: no-repeat;
+}
 
-.home{
-    display: flex;
-    background: url("img/hero\ image.jpg") no-repeat center;
-    height: 100vh;
-    color: rgb(255, 255, 255);
-    min-height: 500px;
-    font-family: 'poppins';
+.home img, .banner img{
+      width: 100%;         /* or a fixed value like 400px */
+  max-width: 500px;    /* adjust as needed */
+  height: auto;        /* or a fixed value like 300px */
+  object-fit: cover;   /* ensures the image covers the area */
+  border-radius: 10px; /* optional: rounded corners */
+  display: block;
+}
+.banner {
+  height: 500px;
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.home {
+  height: 500px;
 }
 
 .home .max-width{
@@ -127,16 +169,22 @@ transition: color 0.3s ease;
 
 .home .home-content .text-1{
     font-size: 27px;
+    color: #ffffff;
+    margin: 0 0 0 20px;
 
 }
 .home .home-content .text-2{
     font-size: 75px;
     font-weight: 600;
-    margin-left: -3px;
+    margin: 0 0 0 20px;
+    color: #ffffff;
+    /* padding: 5px; */
 }
 .home .home-content .text-3{
     font-size: 40px;
-    margin: 5px 0;
+    margin: 0 0 10px 20px;
+    color: #ffffff;
+
 }
 
 .home .home-content .text-3 span{
@@ -153,6 +201,7 @@ transition: color 0.3s ease;
     border-radius: 6px;
     border: 2px solid rgb(190,160,96);
     transition: all 0.3s ease;
+    margin: 0 0 0 20px;
 }
 
 .home .home-content a:hover{
@@ -167,11 +216,29 @@ section{
     padding: 100px 0;
 }
 
+.about {
+   margin-top: 220px;
+}
 .about, .services, .skills, .projects, .contact, footer{
     font-family: 'poppins',sans-serif;
-   
 }
-.about .about-content ,.services .serv-content, 
+
+.column a {
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 8px;
+}
+.social a {
+  color: #08271c;
+}
+.social a:hover {
+  color: rgb(190,160,96);
+  transition: all 0.3s ease-in;
+}
+.about .about-content ,.services .serv-content,
 .skills .skills-content, .contact .contact-content{
     display: flex;
     flex-wrap: wrap;
@@ -238,7 +305,7 @@ section .title::after{
 .about .about-content .right p{
     text-align: justify;
 }
-.about .about-content .right a{
+.about .about-content .right .resume{
     display: inline-block;
     background: rgb(190,160,96);
     color: rgb(255, 255, 255);
@@ -249,12 +316,12 @@ section .title::after{
     border: 2px solid rgb(190,160,96);
     transition: all 0.3s ease;
 }
-.about .about-content .right a:hover{
+.about .about-content .right .resume:hover{
     color: #ffffff;
     background: #000000;
 }
 
-/*services start editig*/ 
+/*services start editig*/
 .services, .projects{
     color: #ffffff;
     background: #080000;
@@ -408,11 +475,11 @@ transition: all 0.3s ease;
 .projects .carousel .card:hover{
     background: rgb(12, 12, 12);
     border: 2px solid rgb(190,160,96);
- 
+
 }
 .projects .carousel .card:hover .box{
     background: rgb(12, 12, 12);
-   
+
     transform: scale(1.05);
 }
 
@@ -559,11 +626,11 @@ margin-right: 10px;
     color: aliceblue;
 }
 
-    
+
  /*footer styling starts here*/
  footer{
     background: black;
-    padding: 15px;
+    padding: 30px;
  }
  footer span{
     color:rgb(190,160,96) ;
@@ -578,7 +645,7 @@ margin-right: 10px;
     -webkit-background-clip: text;
     color: transparent;
   }
-  
+
   .gradient-text::after {
     content: '';
     position: absolute;
@@ -591,7 +658,7 @@ margin-right: 10px;
     transform-origin: center;
     transition: transform 0.3s ease;
   }
-  
+
   .gradient-text:hover::after {
     transform: scaleX(1);
   }
@@ -603,9 +670,11 @@ margin-right: 10px;
 
 
 /*responsive media query start*/
+
 @media (max-width:1300px){
 .home .max-width{
     margin-left: 0px;
+
 }
 }
 
@@ -659,14 +728,23 @@ margin-right: 10px;
         margin: 20px 0;
         font-size: 25px;
     }
+
+    .navbar .logo a{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+    .navbar.sticky .logo a{
+    color: rgb(190,160,96);
+    font-size: 25px;
+}
     .home .home-content .text-2{
         font-size: 65px;
-       
+
     }
-       
+
     .home .home-content .text-3{
         font-size: 35px;
-       
+
     }
 .home .home-content a{
     font-size: 23px;
@@ -678,7 +756,7 @@ margin-right: 10px;
 }
 .max-width{
     max-width: 800px;
-   
+
 }
 .about .about-content .column{
     width: 100%;
@@ -695,7 +773,7 @@ margin-right: 10px;
     width: calc(50% -10px);
     margin-bottom: 20px;
 }
-.skills .skills-content .column, 
+.skills .skills-content .column,
 .contact .contact-content .column{
     width:100%;
     margin-bottom: 20px;
@@ -713,10 +791,10 @@ margin-right: 10px;
     }
     .home .home-content .text-2{
         font-size: 30px;
-       
-    }  
+
+    }
     .home .home-content .text-3{
-        font-size: 23px;   
+        font-size: 23px;
     }
     .home .home-content a{
         font-size: 20px;
@@ -727,4 +805,3 @@ margin-right: 10px;
         width:100%;
     }
 }
-    
