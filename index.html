@@ -44,7 +44,7 @@
         <div class="text-1">Hello, my name is</div>
         <div class="text-2"> Owen Newsome</div>
         <div class="text-3">I am a <span class="typing">Web Developer</span></div>
-        <a href="#contact">Hire Me</a>
+        <a href="#contact">Contact Me</a>
       </div>
     </div>
 </div>
@@ -280,25 +280,29 @@
                 </div>
                 <div class="column right">
                     <div class="text">Message Me</div>
-                    <form action="#">
-                        <div class="fields">
-                            <div class="field name">
-                                <input type="text" id="sendername" placeholder="Name" required>
-                            </div>
-                            <div class="field name">
-                                <input type="text" id="email_id" placeholder="Email" required>
-                        </div>
-                    </div>
-                    <div class="field name">
-                        <input type="text" id="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="field textarea">
-                        <textarea name="" id="message" cols="30" rows="10" placeholder="Describe Project.." required></textarea>
-                    </div>
-                    <div class="button">
-                        <button onclick="sendMail()">Send Message</button>
-                    </div>
-                    </form>
+                    <form onsubmit="event.preventDefault(); sendMail();">
+  <div class="fields">
+    <div class="field name">
+      <input type="text" id="sendername" placeholder="Name" required />
+    </div>
+    <div class="field email">
+      <input type="email" id="email_id" placeholder="Email" required />
+    </div>
+  </div>
+
+  <div class="field subject">
+    <input type="text" id="subject" placeholder="Subject" required />
+  </div>
+
+  <div class="field textarea">
+    <textarea id="message" cols="30" rows="10" placeholder="Describe Project..." required></textarea>
+  </div>
+
+  <div class="button">
+    <button type="submit">Send Message</button>
+  </div>
+</form>
+
                 </div>
             </div>
         </div>

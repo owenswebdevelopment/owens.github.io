@@ -1,4 +1,6 @@
 $(document).ready(function(){
+emailjs.init("BiWJoMLf_VShR9DS5");
+
 $(window).scroll(function(){
     if(this.scrollY > 20){
         $('.navbar').addClass("sticky");
@@ -66,9 +68,7 @@ $('.carousel').owlCarousel({
 })
 
 })
-
 //Initialize EmailJS with your user ID
-emailjs.init("BiWJoMLf_VShR9DS5");
 
 // Define the email parameters
 function sendMail() {
@@ -89,7 +89,7 @@ function sendMail() {
         email_id: emailInput.value.trim(),
         message: messageInput.value.trim(),
         subject: subjectInput.value.trim(),
-        to_email: "melfordmalichai@gmail.com" // Replace with the recipient's email address
+        // to_email: "melfordmalichai@gmail.com"
     };
 
     emailjs.send("service_er8ejie", "template_yiab0xn", params).then(function (res) {
@@ -116,6 +116,7 @@ function sendMail() {
       });
     })
 }
+
 
 
 document.getElementById("year").innerText = new Date().getFullYear();
