@@ -485,6 +485,36 @@ transition: all 0.3s ease;
 
 
 /*project section here*/
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 30px;
+  color: white;
+}
+.icon-wrapper a i {
+    color: white;
+    /* gap: 5px; */
+    margin: 10px;
+}
+.icon-wrapper a i:hover {
+ color: rgb(190,160,96);
+}
+/* .icon-wrapper i:hover {
+  color: rgb(190,160,96);
+} */
+
+/* .devicon-github-original:before, .devicon-github-plain:before {
+    content: "";
+    color: white;
+} */
+/* .devicon-github-original:before, .devicon-github-plain {
+     color: rgb(190,160,96);
+} */
+
+
+
 .projects .title::after{
     content: "My work";
 }
